@@ -10,6 +10,13 @@ namespace StudyProject
     {
         static void Main(string[] args)
         {
+            //string a = "My";
+            //string b = "study work";
+            //Console.WriteLine("1: {0} {1}"  , a , b);
+            //Console.ReadKey();
+
+
+
         }
     }
 }
