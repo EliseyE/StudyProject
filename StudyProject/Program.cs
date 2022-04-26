@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudyProject
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
             #region String code
@@ -80,7 +76,7 @@ namespace StudyProject
 
             //Console.WriteLine(b);
 
-            //a = ++a * a ;
+            //a = ++a * a;
 
             //Console.WriteLine(a);
 
@@ -313,7 +309,7 @@ namespace StudyProject
             //Console.Write("Введине начало диапазона:\t");
             //int currentValue = int.Parse(Console.ReadLine());
             //Console.Write("Введине конец диапазона:\t");
-            //int limit = int.Parse(Console.ReadLine()); 
+            //int limit = int.Parse(Console.ReadLine());
 
             //while (currentValue <= limit)
             //{
@@ -334,9 +330,9 @@ namespace StudyProject
             //    currentValue++;
             //}
 
-            //Console.WriteLine ("\nКоличество нечётных чисел: " + oddNumbercounter);
+            //Console.WriteLine("\nКоличество нечётных чисел: " + oddNumbercounter);
             //Console.WriteLine("Сумма нечётных чисел: " + sumOddNumbers);
-            //Console.WriteLine ("\nКоличество чётных чисел: " + evenNumbercounter);
+            //Console.WriteLine("\nКоличество чётных чисел: " + evenNumbercounter);
             //Console.WriteLine("Сумма чётных чисел: " + sumEvenNumbers);
 
             //Console.ReadKey();
@@ -391,7 +387,7 @@ namespace StudyProject
             //{
             //    System.Threading.Thread.Sleep(100);
             //    consoleKey = Console.ReadKey().Key;
-                
+
             //    if (consoleKey != 0)
             //    {
             //        Console.Clear();
@@ -433,21 +429,255 @@ namespace StudyProject
 
             #endregion Moving bauble
 
+            #region Ternary operator
+
+            //int a = 0;
+            //int b = int.Parse(Console.ReadLine());
+            //int c = int.Parse(Console.ReadLine());
+            //a = b == c ? 70 : 99;
+            //Console.WriteLine(a);
+            //Console.ReadKey();
+
+
+
+
+            #endregion Ternary operator
+
+            #region Array 4 - 2 axis
+            ////1
+            //int[,] myArray;
+            //myArray = new int[3, 5]
+            //{
+            //    {1, 4, 6, 7, 8 },
+            //    {45, 65, 4, 65, 55},
+            //    {434, 545, 33, 5, 9}
+            //};
+
+            //for (int i = 0; i < 3; i++)
+            //{
+
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        Console.Write(myArray[i, j] + "\t ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //Console.WriteLine();
+
+            ////2
+            //foreach (var item in myArray)
+            //{
+            //    Console.Write(item + "\t ");
+            //}
+
+            //Console.WriteLine();
+
+            ////3
+            //int hight = myArray.GetLength(0);
+            //int width = myArray.GetLength(1);
+
+            //Console.WriteLine($"{myArray.GetLength(0)} x {myArray.GetLength(1)}");
+            //Console.WriteLine();
+
+            //for (int y = 0; y < hight; y++)
+            //{
+
+            //    for (int x = 0; x < width; x++)
+            //    {
+            //        Console.Write(myArray[y, x] + "\t ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            ////4
+            //int[,] myArrayFilling = new int[3, 2];
+
+            //int hight1 = myArrayFilling.GetLength(0);
+            //int width1 = myArrayFilling.GetLength(1);
+
+            //for (int y = 0; y < hight1; y++)
+            //{
+
+            //    for (int x = 0; x < width1; x++)
+            //    {
+            //        Console.Write($"Введите значение ячейки массива номер {y}, {x} (y, x): ");
+            //        myArrayFilling[y, x] = int.Parse(Console.ReadLine());
+
+            //    }
+            //}
+
+            //for (int y = 0; y < hight1; y++)
+            //{
+
+            //    for (int x = 0; x < width1; x++)
+            //    {
+            //        Console.Write(myArrayFilling[y, x] + "\t ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //5
+
+            //int[,] myArrayRandom = new int[10, 6];
+
+            //int hight2 = myArrayRandom.GetLength(0);
+            //int width2 = myArrayRandom.GetLength(1);
+
+            //Random rdm = new Random();
+
+            //for (int y = 0; y < hight2; y++)
+            //{
+
+            //    for (int x = 0; x < width2; x++)
+            //    {
+            //       myArrayRandom[y, x] = rdm.Next(1, 155);
+
+            //    }
+            //}
+
+            //for (int y = 0; y < hight2; y++)
+            //{
+
+            //    for (int x = 0; x < width2; x++)
+            //    {
+            //        Console.Write(myArrayRandom[y, x] + "\t ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+
+            //Console.ReadKey();
+
+            #endregion Array 4 - 2 axis
+
+            #region Jagged array
+
+            //int[][] jaggedArray = new int [3][];
+            //jaggedArray[0] = new int [10];
+            //jaggedArray[1] = new int [2];
+            //jaggedArray[2] = new int [12];
+
+
+            //int height= jaggedArray.GetLength(0);
+            //int width;
+
+            //Random rdm = new Random();
+
+            //for (int y = 0; y < height; y++)
+            //{
+
+            //    width = jaggedArray[y].GetLength(0);
+
+            //    for (int x = 0; x < width; x++)
+            //    {
+            //        jaggedArray[y][x] = rdm.Next(7, 5555);
+
+            //    }
+            //}
+
+            //for (int y = 0; y < height; y++)
+            //{
+            //    width = jaggedArray[y].GetLength(0);
+
+            //    for (int x = 0; x < width; x++)
+            //    {
+            //        Console.Write(jaggedArray[y][x] + "\t ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+            //Console.ReadKey();
+
+            #endregion Jagged array
+
+            #region Multi Array
+
+            ////int[,,,] multiArray =
+            ////{
+            ////    {
+            ////        {   {2, 4, 3},          //4d array initialization
+            ////            {45,45,33}
+            ////        },
+
+            ////        {   {2, 4, 3},
+            ////            {45,45,33}
+            ////        },
+
+            ////        {   {2, 4, 3},
+            ////            {45,45,33}
+            ////        },
+            ////    },
+
+            ////    {
+            ////        {   {2, 4, 3},
+            ////            {45,45,33}
+            ////        },
+
+            ////        {   {2, 4, 3},
+            ////            {45,45,33}
+            ////        },
+
+            ////        {   {2, 4, 3},
+            ////            {45,45,33}
+            ////        }
+            ////    }
+            ////};
+
+            //Random rnd = new Random();
+            //Console.Write("Введите первое измерение массива: ");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.Write("Введите второе измерение массива: ");
+            //int b = int.Parse(Console.ReadLine());
+            //Console.Write("Введите третье измерение массива: ");
+            //int c = int.Parse(Console.ReadLine());
+
+            //int[,,] multiArray = new int[a, b, c];
+
+            //for (int i = 0; i < multiArray.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < multiArray.GetLength(1); j++)
+            //    {
+            //        for (int k = 0; k < multiArray.GetLength(2); k++)
+            //        {
+            //            multiArray[i, j, k] = rnd.Next(1, 800);
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < multiArray.GetLength(0); i++)
+            //{
+            //    Console.WriteLine("Page №:" + (i + 1));
+            //    for (int j = 0; j < multiArray.GetLength(1); j++)
+            //    {
+            //        for (int k = 0; k < multiArray.GetLength(2); k++)
+            //        {
+            //            Console.Write(multiArray[i, j, k] + "\t");
+
+
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine("= = = = = = = = = = = = = = = =");
+            //}
+
+
+            //Console.ReadKey();
+
+            #endregion Multi Array
+
+
             #region 1
 
+           
+            Console.ReadKey();
 
-
-
-
-
+            
 
             #endregion 1
-
-
-
-
-
-
 
 
         }
