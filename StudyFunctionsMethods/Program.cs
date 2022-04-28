@@ -164,18 +164,17 @@ namespace StudyFunctionsMethods
 
             #endregion Functions and Methods 3
 
-
             #region Functions and Methods 4 Null
 
-            string str = null;
+            //string str = null;
 
-            //string result = str ?? "";
+            ////string result = str ?? "";
 
-            string result = str ??= string.Empty;
+            //string result = str ??= string.Empty;
 
-            Console.WriteLine("Кол-во символов в строке: " + result.Length);
+            //Console.WriteLine("Кол-во символов в строке: " + result.Length);
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             #endregion Functions and Methods 4 Null
 

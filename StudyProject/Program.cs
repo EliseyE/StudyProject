@@ -669,15 +669,184 @@ namespace StudyProject
 
             #endregion Multi Array
 
+            #region Transposition of matrixes
 
+            //Транспонирование
+
+            //Console.WriteLine("Операция транспонирования матрицы");
+            //Console.Write("Введите количество строк матрицы А: ");
+            //int aMatrixRows = int.Parse(Console.ReadLine());
+            //Console.Write("Введите количество столбцов матрицы А: ");
+            //int aMatrixColumns = int.Parse(Console.ReadLine());
+
+            //int[,] aMatrix = new int[aMatrixRows, aMatrixColumns];
+
+
+            //Random rdm = new Random();
+
+            //for (int i = 0; i < aMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixColumns; j++)
+            //    {
+            //        aMatrix[i, j] = rdm.Next(1, 10);
+            //    }
+            //}
+
+            //Console.WriteLine($"\nМатрица А {aMatrixRows} х {aMatrixColumns}:\n");
+            //for (int i = 0; i < aMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixColumns; j++)
+            //    {
+            //        Console.Write(aMatrix[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //int aMatrixTcolumns = aMatrix.GetLength(0);      //кол-во столбцов
+            //int aMatrixTrows = aMatrix.GetLength(1);        //кол-во строк
+            //int[,] aMatrixT = new int[aMatrixTrows, aMatrixTcolumns];
+
+            //for (int i = 0; i < aMatrixTrows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixTcolumns; j++)
+            //    {
+            //        aMatrixT[i, j] = aMatrix[j, i];
+            //    }
+            //}
+
+            //Console.WriteLine($"\nМатрица А {aMatrixTrows} х {aMatrixTcolumns} транспонированная:\n");
+            //for (int i = 0; i < aMatrixTrows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixTcolumns; j++)
+            //    {
+            //        Console.Write(aMatrixT[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion Transposition of matrixes
+
+            #region Matrix multiplication
+
+            //Console.WriteLine("Умножение матриц. Матрицы должны быть согласованы (количество столбцов матрицы A долно быть равно количеству строк матрицы B!");
+            //while (true)
+            //{
+            //Multiply of matrixes
+
+            ////int[,] aMatrix = new int[,] { { 1, 3, 5, 2 }, { 2, 4, 6, 4 }, { 1, 3, 4, 2 } };
+            ////int aMatrixRows = aMatrix.GetLength(0);
+            ////int aMatrixColumns = aMatrix.GetLength(1);
+
+            //Console.Write("Введите количество строк матрицы А:\t");
+            //int aMatrixRows = int.Parse(Console.ReadLine());
+            //Console.Write("Введите количество столбцов матрицы А:\t");
+            //int aMatrixColumns = int.Parse(Console.ReadLine());
+
+            //int[,] aMatrix = new int[aMatrixRows, aMatrixColumns];
+
+            //Random rdm = new Random();
+
+            //for (int i = 0; i < aMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixColumns; j++)
+            //    {
+            //        aMatrix[i, j] = rdm.Next(1, 10);
+            //    }
+            //}
+
+            //Console.WriteLine($"\nМатрица А {aMatrixRows} х {aMatrixColumns}:\n");
+            //for (int i = 0; i < aMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < aMatrixColumns; j++)
+            //    {
+            //        Console.Write(aMatrix[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            ////int[,] bMatrix = new int[,] { { 7, 4 , }, { 2, 1 }, { 5, 3 } };
+            ////int bMatrixRows = bMatrix.GetLength(0);
+            ////int bMatrixColumns = bMatrix.GetLength(1);
+
+            //Console.WriteLine();
+            //Console.Write("Введите количество строк матрицы B:\t");
+            //int bMatrixRows = int.Parse(Console.ReadLine());
+            //Console.Write("Введите количество столбцов матрицы B:\t");
+            //int bMatrixColumns = int.Parse(Console.ReadLine());
+
+            //int[,] bMatrix = new int[bMatrixRows, bMatrixColumns];
+
+            //for (int i = 0; i < bMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < bMatrixColumns; j++)
+            //    {
+            //        bMatrix[i, j] = rdm.Next(1, 10);
+            //    }
+            //}
+
+            //Console.WriteLine($"\nМатрица B {bMatrixRows} х {bMatrixColumns}:\n");
+            //for (int i = 0; i < bMatrixRows; i++)
+            //{
+            //    for (int j = 0; j < bMatrixColumns; j++)
+            //    {
+            //        Console.Write(bMatrix[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //int[,] abMultiplyMatrix = new int[aMatrixRows, bMatrixColumns];
+            //int abMultiplyMatrixRows = abMultiplyMatrix.GetLength(0);
+            //int abMultiplyMatrixColumns = abMultiplyMatrix.GetLength(1);
+
+            //if (aMatrixColumns == bMatrixRows)
+            //{
+            //    for (int currentRow = 0; currentRow < abMultiplyMatrixRows; currentRow++)
+            //    {
+            //        for (int currentColumn = 0; currentColumn < abMultiplyMatrixColumns; currentColumn++)
+            //        {
+            //            for (int k = 0; k < aMatrixColumns; k++)
+            //            {
+            //                abMultiplyMatrix[currentRow, currentColumn] = abMultiplyMatrix[currentRow, currentColumn] + (aMatrix[currentRow, k] * bMatrix[k, currentColumn]);
+            //            }
+            //        }
+            //    }
+
+            //    Console.WriteLine($"\nМатрица результат умножения матрицы А и матрицы B размер {abMultiplyMatrixRows} х {abMultiplyMatrixColumns} :\n");
+            //    for (int i = 0; i < abMultiplyMatrixRows; i++)
+            //    {
+            //        for (int j = 0; j < abMultiplyMatrixColumns; j++)
+            //        {
+            //            Console.Write(abMultiplyMatrix[i, j] + "\t");
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("\nМатрицы не согласованы (количество столбцов матрицы A не равно количеству строк матрицы B! Умножение невозможно!");
+            //}
+
+            ////if () //дописать, если потребуется сделать выход из бесконечного цикла
+            ////{
+            ////    break;
+            ////}
+            //    Console.WriteLine("===================");
+            //}
+
+            //Console.ReadKey();
+
+            #endregion Matrix multiplication
+                        
             #region 1
 
-           
+
+
             Console.ReadKey();
-
             
-
             #endregion 1
+
 
 
         }
