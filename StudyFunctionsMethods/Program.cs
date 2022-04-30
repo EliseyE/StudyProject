@@ -8,184 +8,171 @@ namespace StudyFunctionsMethods
 {
     internal class Program
     {
-        //Methods
+        static void Main(string[] args)
+        {
+            //Functions and Methods 1
+            //sum2or3values();
+
+            //Functions and Methods 2
+            //symbolsPrintingToConsole();
+
+            //Functions and Methods 3
+            //findValueInSimpleAndRandomArray();
+
+            
+        }
+
         #region Functions and Methods 1
-        //static void PrintResult(int result)
-        //{
-        //    Console.WriteLine("Результат сложения: " + result);
-        //}
 
-        //static int Sum(int a, int b)
-        //{
-        //    int result = a + b;
+        static void PrintResult(int result)
+        {
+            Console.WriteLine("Результат сложения: " + result);
+        }
 
-        //    return result;
+        static int Sum(int a, int b)
+        {
+            int result = a + b;
 
-        //    //return a + b;
-
-        //}
-
-        //static int Sum(int a, int b, int c)
-        //{
-        //    int result = a + b + c;
-
-        //    return result;
+            return result;
 
             //return a + b;
 
-        //}
+        }
 
+        static int Sum(int a, int b, int c)
+        {
+            int result = a + b + c;
+
+            return result;
+
+            //return a + b;
+
+        }
+
+        static void sum2or3values()
+        {
+            int a, b, c, d;
+
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+
+            d = Sum(a, b);
+
+            PrintResult(d);
+
+            Console.ReadKey();
+        }
         #endregion Functions and Methods 1
 
         #region Functions and Methods 2
-        //static void PrintLine(string symbol, uint symbolsCount)
-        //{
-        //    for (int i = 0; i < symbolsCount; i++)
-        //    {
-        //        Console.Write(symbol);
-        //    }
-        //}
-        //static void PrintLineChar(char symbol, uint symbolsCount)
-        //{
-        //    for (int i = 0; i < symbolsCount; i++)
-        //    {
-        //        Console.Write(symbol);
-        //    }
-        //}
+
+        static void PrintLine(string symbol, uint symbolsCount)
+        {
+            for (int i = 0; i < symbolsCount; i++)
+            {
+                Console.Write(symbol);
+            }
+        }
+
+        static void PrintLineChar(char symbol, string shift, uint symbolsCount)
+        {
+            for (int i = 0; i < symbolsCount; i++)
+            {
+                Console.Write(symbol + shift);
+            }
+        }
+
+        static void symbolsPrintingToConsole()
+        {
+            Console.Write("Введите символы: ");
+            string str = Console.ReadLine();
+            PrintLine($"{str}\t", 100);
+
+            Console.WriteLine();
+            Console.Write("Введите один символ: ");
+            char chr = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            PrintLineChar(chr, "\t", 100);
+
+            Console.ReadKey();
+        }
 
         #endregion Functions and Methods 2
 
         #region Functions and Methods 3
 
-        //static int IndexOf(int[] array, int value)
-        //{
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        if (array[i] == value)
-        //        {
-        //            return i;
-        //        }
-        //    }
-        //    return -1;
-        //}
-
-        //static int[] GetRandomArray(uint length, int minValue, int maxVelue)
-        //{
-        //    int[] myArray = new int[length];
-
-        //    Random rdm = new Random();
-
-        //    for (int i = 0; i < myArray.Length; i++)
-        //    {
-        //        myArray[i] = rdm.Next(minValue, maxVelue);
-        //    }
-
-        //    return myArray;
-
-        //}
-
-        #endregion Functions and Methods 3
-
-
-
-        static void Main(string[] args)
+        static int IndexOf(int[] array, int value)
         {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == value)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
 
-            #region Functions and Methods 1
+        static int[] GetRandomArray(uint length, int minValue, int maxVelue)
+        {
+            int[] myArray = new int[length];
 
-            //int a, b, c;
+            Random rdm = new Random();
 
-            //a = int.Parse(Console.ReadLine());
-            //b = int.Parse(Console.ReadLine());
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] = rdm.Next(minValue, maxVelue);
+            }
+            return myArray;
+        }
 
-            //c = Sum(a, b);
+        static void findValueInSimpleAndRandomArray()
+        {
+            int[] myArray = { -345, 65, 456, 345, 45 };
 
-            //PrintResult(c);
+            int index1 = IndexOf(myArray, 45);
 
-            //Console.ReadKey();
+            Console.WriteLine(index1);
 
-            #endregion Functions and Methods 1
-
-            #region #region Functions and Methods 2
-
-            //Console.Write("Введите символы: ");
-            //string str = Console.ReadLine();
-            //PrintLine($"{str}\t", 100);
-
-
-            //Console.WriteLine();
-            //Console.Write("Введите один символ: ");
-            //char chr = Console.ReadKey().KeyChar;
-            //PrintLine($"{chr}\t", 100);
-
-            //Console.ReadKey();
-
-            #endregion Functions and Methods 2
-
-            #region Functions and Methods 3
-
-            //int[] myArray = {-345, 65, 456, 345, 45};
-
-            //int index = IndexOf(myArray, 45);
-
-            //Console.WriteLine(index);
-
-            //Console.ReadKey();
+            Console.ReadKey();
 
             //2 Random and search
+            int[] myArray1 = GetRandomArray(1000, 4, 7000);
 
-            //int[] myArray1 = GetRandomArray(1000, 4, 7000);
+            for (int i = 0; i < myArray1.Length; i++)
+            {
+                Console.Write(myArray1[i] + "\t");
+            }
 
-            //for (int i = 0; i < myArray1.Length; i++)
-            //{
-            //    Console.Write(myArray1[i] + "\t");
-            //}
+            Random rdm1 = new Random();
+            int index = 0;
+            int search = myArray1[0];
+            int search1 = -1;
 
-            //Random rdm1 = new Random();
-            //int index = 0;
-            //int search = myArray1[0];
-            //int search1 = -1;
+            while (search != search1)
+            {
+                int i = 0;
+                for (; i < myArray1.Length; i++)
+                {
+                    search = rdm1.Next(10, 20000);
+                    search1 = myArray1[i];
+                }
+            }
 
-            //while(search != search1)
-            //{
-            //    int i = 0;
-            //    for (; i < myArray1.Length; i++)
-            //    {
-            //        search = rdm1.Next(10, 20000);
-            //        search1 = myArray1[i];
+            index = IndexOf(myArray1, search);
+            Console.WriteLine("\nНайден: " + (index + 1) + " : " + search);
 
-            //    }
-            //}
-
-            //index = IndexOf(myArray1, search);
-            //Console.WriteLine("\nНайден: " + (index + 1) + " : " + search);
-
-            //Console.ReadKey();
-
-            #endregion Functions and Methods 3
-
-            #region Functions and Methods 4 Null
-
-            //string str = null;
-
-            ////string result = str ?? "";
-
-            //string result = str ??= string.Empty;
-
-            //Console.WriteLine("Кол-во символов в строке: " + result.Length);
-
-            //Console.ReadKey();
-
-            #endregion Functions and Methods 4 Null
-
-
+            Console.ReadKey();
         }
 
 
 
 
 
+        #endregion Functions and Methods 3
 
+    
 
 
 
