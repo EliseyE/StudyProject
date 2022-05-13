@@ -8,55 +8,70 @@ namespace StudyProject
     {
         static void Main(string[] args)
         {
-            //All of my study tasks is written in methods in the class named Program under the method Main
+            ////notice: All of my study tasks is written in methods in the class named Program under the method Main. It's made to simplify run in the Main of any study task only.
 
-            //simpleStringCode();
 
-            //numeralConvertion();
+            //SimpleStringCode();
 
-            //simpleArithmeticOperations();
+            //NumeralConvertion();
 
-            //triangleSimple();
+            //SimpleArithmeticOperations();
 
-            //triangleSpecificPositioningByCursor();
+            //TriangleSimple();
 
-            //simpleArray();
+            //TtriangleSpecificPositioningByCursor();
 
-            //simpleArrayInputDataOutputToConsole();
+            //SimpleArray();
 
-            //pascalTriangleWithSpecificPositioningByCursor();
+            //SimpleArrayInputDataOutputToConsole();
 
-            //arraySumEvenValuesFindMinValue();
+            //PascalTriangleWithSpecificPositioningByCursor();
 
-            //simpleSwitch();
+            //ArraySumEvenValuesFindMinValue();
 
-            //oddEvenCounter();
+            //SimpleSwitch();
 
-            //simpleRectangleDrawWithSpecificPositioningByCursor();
+            //OddEvenCounter();
 
-            //movingDotBaubleInConsoleSpace();
+            //SimpleRectangleDrawWithSpecificPositioningByCursor();
 
-            //simpleTernaryOperator();
+            //MovingDotBaubleInConsoleSpace();
 
-            //array2D();
+            //SimpleTernaryOperator();
 
-            //jaggedArray();
+            //Array2D();
 
-            //multiDimensionalArray();
+            //JaggedArray();
 
-            //transpositionOfMatrixes();
+            //MultiDimensionalArray();
 
-            //matrixMultiplication();
+            //TranspositionOfMatrixes();
 
-            //financialTableReport();
+            //MatrixMultiplication();
 
-            //lesson1FromEngineerSpock();
+            //FinancialTableReport();
 
-            //nullСheckThenAssignmentOperators();
+            //Lesson1FromEngineerSpock();
+
+            //NullСheckThenAssignmentOperators();
+
+            //ConditionalNull();
+
+            //NullableTypes();
+
+            //EnumLessonPart1();
+            //EnumLessonPart2();
+            //EnumLessonPart3();
+            //EnumLessonPart4();
+
+            Lesson2FromEngineerSpock();
+
+
+            Console.ReadKey();
 
         }
 
-        static void simpleStringCode()
+        static void SimpleStringCode()
         {
             string a = "My";
             string b = "study work";
@@ -64,7 +79,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void numeralConvertion()
+        static void NumeralConvertion()
         {
             string a = "2.8";
 
@@ -116,7 +131,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleArithmeticOperations()
+        static void SimpleArithmeticOperations()
         {
             int a = 2;
 
@@ -140,7 +155,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void triangleSimple()
+        static void TriangleSimple()
         {
             string symbol = "*";
 
@@ -163,7 +178,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void triangleSpecificPositioningByCursor()
+        static void TtriangleSpecificPositioningByCursor()
         {
             string symbol = "* ";  // Пробел добавлен, так как смещать мы можем только на дискретный шаг символа
 
@@ -181,7 +196,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleArray()
+        static void SimpleArray()
         {
             int[] myArray = new int[5];
 
@@ -195,7 +210,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleArrayInputDataOutputToConsole()
+        static void SimpleArrayInputDataOutputToConsole()
         {
             Console.Write("Введите количество элементов массива:\t");
 
@@ -219,7 +234,7 @@ namespace StudyProject
             Console.ReadLine();
         }
 
-        static void pascalTriangleWithSpecificPositioningByCursor()
+        static void PascalTriangleWithSpecificPositioningByCursor()
         {
             string messageInputSizePascalTriangle = "Введите размер треугольника Паскаля:";
             Console.Write($"{messageInputSizePascalTriangle} ");
@@ -259,7 +274,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void arraySumEvenValuesFindMinValue()
+        static void ArraySumEvenValuesFindMinValue()
         {
             int[] Array1 = { 12, 21, 34, 4, 57, 63, 74 };
 
@@ -288,7 +303,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleSwitch()
+        static void SimpleSwitch()
         {
             string switchString = "Min";
 
@@ -348,7 +363,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void oddEvenCounter()
+        static void OddEvenCounter()
         {
             int oddNumbercounter = 0;
             int evenNumbercounter = 0;
@@ -387,7 +402,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleRectangleDrawWithSpecificPositioningByCursor()
+        static void SimpleRectangleDrawWithSpecificPositioningByCursor()
         {
             for (int i = 1; i <= 5; i++)
             {
@@ -416,7 +431,7 @@ namespace StudyProject
             Console.ReadLine();
         }
 
-        static void movingDotBaubleInConsoleSpace()
+        static void MovingDotBaubleInConsoleSpace()
         {
             Console.SetCursorPosition(Console.WindowWidth / 2, 5);
             Console.WriteLine("Используйте стрелки для перемещения");
@@ -475,7 +490,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void simpleTernaryOperator()
+        static void SimpleTernaryOperator()
         {
             int a = 0;
             int b = int.Parse(Console.ReadLine());
@@ -486,7 +501,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void array2D()
+        static void Array2D()
         {
             //1
             int[,] myArray;
@@ -593,7 +608,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void jaggedArray()
+        static void JaggedArray()
         {
             int[][] jaggedArray = new int[3][];
             jaggedArray[0] = new int[10];
@@ -630,7 +645,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void multiDimensionalArray()
+        static void MultiDimensionalArray()
         {
             //int[,,,] multiArray =
             //{
@@ -703,7 +718,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void transpositionOfMatrixes()
+        static void TranspositionOfMatrixes()
         {
             Console.WriteLine("Операция транспонирования матрицы");
             Console.Write("Введите количество строк матрицы А: ");
@@ -756,7 +771,7 @@ namespace StudyProject
             }
         }
 
-        static void matrixMultiplication()
+        static void MatrixMultiplication()
         {
 
             Console.WriteLine("Умножение матриц. Матрицы должны быть согласованы (количество столбцов матрицы A долно быть равно количеству строк матрицы B!");
@@ -818,7 +833,7 @@ namespace StudyProject
                         bMatrix[i, j] = rdm.Next(1, 10);
                     }
                 }
-                
+
                 Console.WriteLine($"\nМатрица B {bMatrixRows} х {bMatrixColumns}:\n");
                 for (int i = 0; i < bMatrixRows; i++)
                 {
@@ -871,10 +886,9 @@ namespace StudyProject
                 Console.WriteLine();
             }
 
-            Console.ReadKey();
         }
 
-        static void financialTableReport()
+        static void FinancialTableReport()
         {
             string[] haederArray = new string[4] { "Месяц", "Выручка", "Издержки", "Прибыль" };
             int[] monthsArray = new int[12] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -930,7 +944,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void lesson1FromEngineerSpock()
+        static void Lesson1FromEngineerSpock()
         {
             //защита от переполнерия. Использовать checked, будет выпадать ошибка, программа упадёт
             //Но надо писать код так, чтобы не было переполнений. Просто если очень важно там, жизненно.6
@@ -953,7 +967,7 @@ namespace StudyProject
             Console.ReadKey();
         }
 
-        static void nullСheckThenAssignmentOperators()
+        static void NullСheckThenAssignmentOperators()
         {
             //Сheck and then assign default value
             string str1 = null;
@@ -983,6 +997,205 @@ namespace StudyProject
 
             Console.ReadKey();
         }
+
+        static void ConditionalNull()
+        {
+            int[] array = { 1, 2, 3 };
+            array = null;
+
+            //if array is null, then operation Sum will not run
+            Console.WriteLine("1 Сумма элементов массива: " + array?.Sum());
+
+            //if array is null, then operation Sum will not run, but there is default value for array
+            Console.WriteLine("2 Сумма элементов массива: " + (array?.Sum() ?? 0));
+
+            Console.ReadKey();
+        }
+
+        static void NullableTypes()
+        {
+            int? value = null;
+
+            Console.WriteLine(value == null);   //True
+
+            Console.WriteLine(value.HasValue);  //False
+
+            Console.WriteLine(value.GetValueOrDefault());   //0
+
+            Console.WriteLine(value.GetValueOrDefault(77));  //77
+
+            Console.WriteLine(value ?? 55); //55 оператор объединения с null
+
+            //Console.WriteLine(value.Value); //InvalidOperationException
+
+            DateTime dateTime = DateTime.Now;
+
+            Console.WriteLine(dateTime);
+
+            Nullable<DateTime> dateTime1 = DateTime.Now;
+            //the same
+            DateTime? dateTime2 = null;
+
+            int a = 4;
+
+            int? b = null;
+
+            int? result = a + b;
+
+            Console.WriteLine(result);  //null
+
+        }
+
+        //EnumLessonPart1
+        static void EnumLessonPart1()
+        {
+            while (true)
+            {
+                ConsoleKey key = Console.ReadKey().Key;
+
+                int keyCode = (int)key;
+
+                Console.WriteLine($"\tEnum {key}\tKey Code {keyCode}");
+
+                if (key == ConsoleKey.Enter)
+                {
+                    Console.WriteLine("Вы нажали Enter!");
+                }
+            }
+        }
+
+        //EnumLessonPart2
+        enum DayOfWeek
+        {
+            Monday = 1,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+        }
+
+        static DayOfWeek GetNextDay(DayOfWeek day)
+        {
+            if (day < DayOfWeek.Sunday)
+                return day + 1;
+
+            return DayOfWeek.Monday;
+        }
+
+        static void EnumLessonPart2()
+        {
+            DayOfWeek dayOfWeek = DayOfWeek.Sunday;
+
+            Console.WriteLine(Enum.GetUnderlyingType(typeof(DayOfWeek)));
+
+            Console.WriteLine(dayOfWeek);
+
+            Console.WriteLine((int)dayOfWeek);
+
+            Console.WriteLine((DayOfWeek)3);
+
+            DayOfWeek nextDay = GetNextDay(dayOfWeek);
+            Console.WriteLine(nextDay);
+
+            //check for correct value enum number input
+            int value = 41;
+
+            if (Enum.IsDefined(typeof(DayOfWeek), value))
+            {
+                dayOfWeek = (DayOfWeek)value;
+            }
+            else
+            {
+                throw new Exception("Invalid DayOfWeek value.");
+            }
+            Console.WriteLine(dayOfWeek);
+        }
+
+        //EnumLessonPart3
+        enum Color
+        {
+            White,
+            Red,
+            Green,
+            Blue,
+            Orange
+        }
+
+        //Get info about all enum values
+        static void EnumLessonPart3()
+        {
+            var values = Enum.GetValues(typeof(Color));
+
+            foreach (var item in values)
+            {
+                Console.WriteLine(item);
+            }
+
+            string inputColor = Console.ReadLine();
+            Color color = (Color)Enum.Parse(typeof(Color), inputColor, ignoreCase: true);
+            Console.WriteLine(color);
+
+        }
+
+        //Parse enum values
+        static void EnumLessonPart4()
+        {
+            string inputColor = Console.ReadLine();
+            Color color = (Color)Enum.Parse(typeof(Color), inputColor, ignoreCase: true);
+            Console.WriteLine(color);
+
+            //int test = int.Parse(Console.ReadLine());
+            //Console.WriteLine(test);
+
+            switch (color)
+            {
+                case Color.White:
+                    break;
+                case Color.Red:
+                    break;
+                case Color.Green:
+                    break;
+                case Color.Blue:
+                    break;
+                case Color.Orange:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        static void Lesson2FromEngineerSpock()
+        {
+            Console.WriteLine(Math.Pow(2, 3));
+            Console.WriteLine(Math.Sqrt(9));
+
+            Console.WriteLine(Math.Round(1.5));
+            Console.WriteLine(Math.Round(2.5));
+            Console.WriteLine(Math.Round(2.5, MidpointRounding.AwayFromZero));
+            Console.WriteLine(Math.Round(2.5, MidpointRounding.ToEven));
+
+            string s1 = "fihsdfg";
+            char first = s1[0];
+            char last = s1[s1.Length - 1];
+            Console.WriteLine($"First: {first}. Last: {last}");
+
+            DateTime now = DateTime.Now;
+            Console.WriteLine(now.ToString());
+
+            Console.WriteLine($"It's {now.Date}, {now.Hour}:{now.Minute}");
+
+            DateTime dt = new DateTime(2016, 2, 28);
+            DateTime newDt = dt.AddDays(1);
+            Console.WriteLine(newDt);
+
+            TimeSpan ts = now - dt;
+            ts = now.Subtract(dt);
+            Console.WriteLine(ts.Days);
+        }
+
+
 
     }
 }

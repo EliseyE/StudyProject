@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyProject", "StudyProjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyFunctionsMethods", "StudyFunctionsMethods\StudyFunctionsMethods.csproj", "{F3088C08-2A15-4670-9F0B-344611B1A7D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyClasses", "StudyClasses\StudyClasses.csproj", "{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyNeuron", "StudyNeuron\StudyNeuron.csproj", "{1E02F05C-7D47-4378-8788-EDDBC0B15F09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F3088C08-2A15-4670-9F0B-344611B1A7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3088C08-2A15-4670-9F0B-344611B1A7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3088C08-2A15-4670-9F0B-344611B1A7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
