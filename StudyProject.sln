@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyClasses", "StudyClasse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyNeuron", "StudyNeuron\StudyNeuron.csproj", "{1E02F05C-7D47-4378-8788-EDDBC0B15F09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyPhoneNotebook", "StudyPhoneNotebook\StudyPhoneNotebook.csproj", "{7E860279-8C0A-45A4-B039-1F1E9A6B8404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E02F05C-7D47-4378-8788-EDDBC0B15F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

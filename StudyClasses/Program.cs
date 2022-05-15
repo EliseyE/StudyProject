@@ -24,7 +24,7 @@ namespace StudyClasses
 
 
             ////5
-            //CountingOfExemplarsofClassCreated();
+            //CountingOfExemplarsOfClassCreated();
 
             ////6
             //SeeWhatIsStaticConstructor();
@@ -266,7 +266,7 @@ namespace StudyClasses
 
         }
 
-        static void CountingOfExemplarsofClassCreated()
+        static void CountingOfExemplarsOfClassCreated()
         {
             ThatClassNeedsToCountExemplars classToNeedCountExemplarNumber1 = new ThatClassNeedsToCountExemplars();
             ThatClassNeedsToCountExemplars classToNeedCountExemplarNumber2 = new ThatClassNeedsToCountExemplars();
