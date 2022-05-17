@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyNeuron", "StudyNeuron\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyPhoneNotebook", "StudyPhoneNotebook\StudyPhoneNotebook.csproj", "{7E860279-8C0A-45A4-B039-1F1E9A6B8404}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyPolymorphism", "StudyPolymorphism\StudyPolymorphism.csproj", "{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyAbstract", "StudyAbstract\StudyAbstract.csproj", "{B9DCE80C-C09A-4421-A124-369824D73E27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E860279-8C0A-45A4-B039-1F1E9A6B8404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DCE80C-C09A-4421-A124-369824D73E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DCE80C-C09A-4421-A124-369824D73E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DCE80C-C09A-4421-A124-369824D73E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DCE80C-C09A-4421-A124-369824D73E27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

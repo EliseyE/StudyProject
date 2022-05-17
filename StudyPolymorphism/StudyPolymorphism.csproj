@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F39CE9D9-7707-42F6-81E0-F54F8CA444DB}</ProjectGuid>
+    <ProjectGuid>{8065BACB-A768-47EA-AB7B-FA05CAEEA2DE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StudyClasses</RootNamespace>
-    <AssemblyName>StudyClasses</AssemblyName>
+    <RootNamespace>StudyPolymorphism</RootNamespace>
+    <AssemblyName>StudyPolymorphism</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
