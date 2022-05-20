@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace StudyProject
 {
-    internal class Program
+    internal class ProgramStudy
     {
         static void Main(string[] args)
         {
@@ -1195,6 +1195,7 @@ namespace StudyProject
             Console.WriteLine(ts.Days);
         }
 
+        
 
 
     }

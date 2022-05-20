@@ -8,7 +8,7 @@ using StudyClasses;
 namespace StudyClasses_MyExtensions
 {
     
-    static class MyExtensions
+    static class MyExtentions
     {
         //7 Extension methods for DateTime
         public static void Print(this DateTime dateTime)

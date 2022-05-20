@@ -14,12 +14,12 @@ namespace StudyClasses
         public string LastName { get; set; }
     }
 
-    internal class Program
+    internal class ProgramClasses
     {
         static void Main(string[] args)
         {
             ////1
-            //CreatingOfObjectOfClassPoint();
+            //CreatingOfObjectOfClassPoint();6 
 
             ////2
             //StudentDataToConsole();
@@ -342,7 +342,7 @@ namespace StudyClasses
             new ClassForStudyStaticConstructor();
         }
 
-        //6a Simulation of connetion to DB by an external configuration file. It's using static configutarion and configuration for all of class objects
+        //6a Simulation of connetion to DB by an external configuration file. It's using static configurator and configuration for all of class objects
         class DbRepository
         {
             private static string connectionKey;
@@ -567,7 +567,7 @@ namespace StudyClasses
             point3D.Print3D();
         }
 
-        //11 Operators as is. Inheritance and type conversion
+        //11 Operators as, is. Inheritance and type conversion
 
         class NeedToConvertClass
         {

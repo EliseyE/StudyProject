@@ -28,6 +28,7 @@ namespace StudyPolymorphism
 
         public override void Drive()
         {
+            base.StartEngine();
             Console.WriteLine("Car is riding very fast"); ;
         }
     }
@@ -40,11 +41,13 @@ namespace StudyPolymorphism
         }
     }
 
-    internal class Program
+    internal class ProgramPolymorphism
     {
         static void Main(string[] args)
         {
             Person person = new Person();
+
+            //person.Drive(new Car());
 
             person.Drive(new SportCar());
 

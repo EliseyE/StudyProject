@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudyNeuron
 {
-    internal class Program
+    internal class ProgramNeuron
     {
         class Neuron
         {

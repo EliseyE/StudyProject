@@ -4,13 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyAbstract
+namespace StudyInterfacesInheritance
 {
-    abstract class Weapon
+    interface IHasInfo
+    {
+        void ShowInfo();
+    }
+
+    interface IWeapon
+    {
+        int Damage { get; }
+        void Fire();
+    }
+
+    abstract class Weapon : IHasInfo, IWeapon
     {
         public abstract int Damage { get; }
         public abstract void Fire();
-        
+
         public void ShowInfo()
         {
             Console.WriteLine($"{GetType().Name} Damage: {Damage}");
@@ -25,7 +36,6 @@ namespace StudyAbstract
         {
             Console.WriteLine("Bang!");
         }
-        
     }
 
     class LaserGun : Weapon
@@ -50,18 +60,26 @@ namespace StudyAbstract
 
     class Player
     {
-        public void Fire(Weapon weapon)
+        public void Fire(IWeapon weapon)
         {
             weapon.Fire();
         }
 
-        public void ChckInfo(Weapon weapon)
+        public void ChckInfo(IHasInfo hasInfo)
         {
-            weapon.ShowInfo();
+            hasInfo.ShowInfo();
         }
     }
 
-    internal class Program
+    class Box : IHasInfo
+    {
+        public void ShowInfo()
+        {
+            Console.WriteLine("I'm the box");
+        }
+    }
+
+    internal class ProgramIntefaceExample
     {
         static void Main(string[] args)
         {
@@ -75,6 +93,8 @@ namespace StudyAbstract
                 player.Fire(item);
                 Console.WriteLine();
             }
+
+            player.ChckInfo(new Box());
 
             Console.ReadKey();
         }

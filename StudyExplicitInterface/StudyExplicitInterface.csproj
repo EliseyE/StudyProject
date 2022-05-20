@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E02F05C-7D47-4378-8788-EDDBC0B15F09}</ProjectGuid>
+    <ProjectGuid>{DDD28CFD-D0CC-486B-95A9-647D83419AA6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StudyNeuron</RootNamespace>
-    <AssemblyName>StudyNeuron</AssemblyName>
+    <RootNamespace>StudyExplicitInterface</RootNamespace>
+    <AssemblyName>StudyExplicitInterface</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProgramNeuron.cs" />
+    <Compile Include="ProgramExplicitInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

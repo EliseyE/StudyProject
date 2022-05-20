@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudyFunctionsMethods
 {
-    internal class Program
+    internal class ProgramFunctionsMethods
     {
         static void Main(string[] args)
         {
