@@ -64,7 +64,13 @@ namespace StudyProject
             //EnumLessonPart3();
             //EnumLessonPart4();
 
-            Lesson2FromEngineerSpock();
+            //Lesson2FromEngineerSpock();
+
+            int[] a = { 5, 4, 6, 2 };
+            int[] b = a;
+            a[0] = 99;
+            
+            Console.WriteLine($"{a[0]} {b[0]}");
 
 
             Console.ReadKey();

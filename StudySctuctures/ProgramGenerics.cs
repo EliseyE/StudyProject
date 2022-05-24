@@ -37,7 +37,7 @@ namespace StudyGenerics
                 }
 
                 newArray[_array.Length] = value;
-                _array = newArray;
+                _array = newArray;  
             }
 
         }
