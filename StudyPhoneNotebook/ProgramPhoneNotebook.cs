@@ -215,14 +215,15 @@ namespace StudyPhoneNotebook
                     printer.PrintEntry(phoneBook.EntryBook[entryNumberToEdit]);
                     Entry oldEntry = phoneBook.EntryBook[entryNumberToEdit];
 
+                    //1st variant
                     //Console.WriteLine("Input new data:");
                     //phoneBook.EntryBook[entryNumber] = inputer.CreateEntry();
                     //phoneBook.EntryBook[entryNumber].Id = oldEntry.Id;
-
-                    //
+                    
+                    //2nd variant
                     foreach (PropertyInfo field in oldEntry.GetType().GetTypeInfo().DeclaredProperties)
                     {
-                        if (field.CanWrite == true)
+                        if (field.CanWrite)
                         {
                             Console.Write("Input new {0}: ", field.Name);
                             string inputData = Console.ReadLine();
@@ -280,6 +281,7 @@ namespace StudyPhoneNotebook
 
                     Console.WriteLine("To confirm deleting operation write Y");
                     string questionForClosing = Console.ReadLine();
+
                     if ((questionForClosing == "Y") || (questionForClosing == "y"))
                         phoneBook.EntryBook = phoneBook.DeleteEntry(entryNumber, phoneBook.EntryBook);
                 }
@@ -307,7 +309,7 @@ namespace StudyPhoneNotebook
             {
                 foreach (PropertyInfo field in entry.GetType().GetTypeInfo().DeclaredProperties)
                 {
-                    if (field.CanWrite == true)
+                    if (field.CanWrite)
                     {
                         Console.WriteLine("Input new {0}: ", field.Name);
                         field.SetValue(entry, Console.ReadLine());
@@ -408,11 +410,13 @@ namespace StudyPhoneNotebook
                             if (property[j + i] == requestToFind[j])
                             {
                                 charCounterOfRequestToFind++;
+                            }
 
-                                if (charCounterOfRequestToFind == requestToFind.Length)
-                                {
-                                    findingResult = true; 
-                                }
+                            if (charCounterOfRequestToFind == requestToFind.Length)
+                            {
+                                findingResult = true;
+                                i = property.Length;
+                                break;
                             }
                         }
                     }
@@ -468,13 +472,6 @@ namespace StudyPhoneNotebook
                         close = false;
                         break;
                 }
-
-                //Console.WriteLine();
-                //Console.Write("Close? Write Y to close program: ");
-                //string questionForClosing = Console.ReadLine();
-                //if (questionForClosing == "Y" || questionForClosing == "y")
-                //    close = false;
-                //Console.WriteLine();
             }
         }
     }
