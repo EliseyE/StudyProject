@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace StudyPhoneNotebook
 {
-    //in process..
-    //
-    //
-
     internal class ProgramPhoneNotebook
     {
         class Entry
         {
-            public Guid Id { get; set; }
-            public string Name { get; set; }
+            private Guid _id;
+            private string _name;
+            private string _familyName;
+            private string _phoneNumber;
+
+            public Entry()
+            {
+                _id = Guid.NewGuid();
+            }
+
+            public Guid Id { get { return _id; } }
+            public string Name { get { return _name; } set { _name = value; } }
+            public string FamilyName { get { return _familyName; } set { _familyName = value; } }
+            public string PhoneNumber { get { return _phoneNumber; } set { _phoneNumber = value; } }
         }
 
         class PhoneBook
@@ -70,17 +79,58 @@ namespace StudyPhoneNotebook
             {
                 return true;
             }
+
+            public bool CheckInputE(string inputData)
+            {
+                bool checkResult = false;
+                bool checkSpace = false;
+                bool checkLettersOrDigits = false;
+
+                foreach (Char c in inputData)
+                {
+                    if (c == ' ')
+                        checkSpace = true;
+
+                    if (Char.IsLetterOrDigit(c))
+                        checkLettersOrDigits = true;
+                }
+
+                if ((inputData != "") || ((checkSpace = false) && (checkLettersOrDigits = true)) || (inputData == null))
+                    checkResult = true;
+
+                    return checkResult;
+            }
         }
 
         class Inputer
         {
             public Entry CreateEntry()
             {
+                Validator validator = new Validator();
                 Entry entry = new();
-                entry.Id = Guid.NewGuid();
-                Console.WriteLine($"Id: {entry.Id}");
-                Console.Write("Input name: ");
-                entry.Name = Console.ReadLine();
+
+                //1st varian
+                //entry.Id = Guid.NewGuid();
+                //Console.WriteLine($"Id: {entry.Id}");
+                //Console.Write("Input name: ");
+                //entry.Name = Console.ReadLine();
+
+                //2nd variant
+                foreach (PropertyInfo field in entry.GetType().GetTypeInfo().DeclaredProperties)
+                {
+                    if(field.CanWrite == true)
+                    {
+                        Console.Write("Input {0}: ", field.Name);
+                        string inputData = Console.ReadLine();
+
+                        if (validator.CheckInputE(inputData) == false)
+                        {
+                            inputData = "no data";
+                        }
+
+                        field.SetValue(entry, inputData);
+                    }
+                }
 
                 return entry;
             }
@@ -92,6 +142,9 @@ namespace StudyPhoneNotebook
             Validator validator = new Validator();
             Inputer inputer = new Inputer();
             Printer printer = new Printer();
+            Sorter sorter = new Sorter();
+            Сomparator сomparator = new Сomparator();
+            Editor editor = new Editor();
 
             public void AddNewEntry()
             {
@@ -109,45 +162,106 @@ namespace StudyPhoneNotebook
                     Console.WriteLine("To stop adding process press Escape. To continue press any key");
                     consoleKey = Console.ReadKey().Key;
                 }
+                Console.WriteLine();
             }
 
-            public void  FindEntry()
+            public void FindEntry()
             {
-                Console.WriteLine("I'm finding something");
+                Console.WriteLine();
+                Console.WriteLine("Finding process");
+                Console.WriteLine("Input what you are looking for:");
+                string requestToFind = Console.ReadLine();
+                Console.WriteLine();
+                bool findingStatus = false;
+
+                for (int i = 0; i < phoneBook.EntryBook.Length; i++)
+                {
+                    string[] entryProperties = sorter.Sorting(phoneBook.EntryBook[i]);
+                    
+                    for (int j = 0; j < entryProperties.Length; j++)
+                    {
+                        bool findingResult = сomparator.ComparingOfRequestAndEntryProperties(requestToFind, entryProperties[j]);
+
+                        if (findingResult)
+                        {
+                            Console.WriteLine($"Entry number: {i}");
+                            printer.PrintEntry(phoneBook.EntryBook[i]);
+                            findingStatus = true;
+                            break;
+                        }
+                    }
+                }
+                if (findingStatus == false)
+                {
+                    Console.Beep(450, 500);
+                    Console.WriteLine("Result: Not found. Please try again.");
+                    Console.WriteLine();
+                }
             }
 
             public void EditEntry()
             {
                 Console.WriteLine();
                 Console.WriteLine("Edit entry process");
+                Console.WriteLine("If the data does not need to be changed, input symbol: -");
                 Console.WriteLine("Input entry number:");
-                bool checkNumber = int.TryParse(Console.ReadLine(), out int result);
+                bool checkNumber = int.TryParse(Console.ReadLine(), out int entryNumberToEdit);
                 Console.WriteLine();
 
-                if (checkNumber == true && result < phoneBook.EntryBook.Length)
+                if ((checkNumber == true) && (entryNumberToEdit < phoneBook.EntryBook.Length) && (entryNumberToEdit >= 0))
                 {
-                    int entryNumber = result;
+                    //int entryNumber = entryNumberToEdit;
                     Console.WriteLine("This Entry needs to edit:");
-                    printer.PrintEntry(phoneBook.EntryBook[entryNumber]);
-                    Entry oldEntry = phoneBook.EntryBook[entryNumber];
+                    printer.PrintEntry(phoneBook.EntryBook[entryNumberToEdit]);
+                    Entry oldEntry = phoneBook.EntryBook[entryNumberToEdit];
 
-                    Console.WriteLine("Input new data:");
-                    phoneBook.EntryBook[entryNumber] = inputer.CreateEntry();
-                    phoneBook.EntryBook[entryNumber].Id = oldEntry.Id;
+                    //Console.WriteLine("Input new data:");
+                    //phoneBook.EntryBook[entryNumber] = inputer.CreateEntry();
+                    //phoneBook.EntryBook[entryNumber].Id = oldEntry.Id;
+
+                    //
+                    foreach (PropertyInfo field in oldEntry.GetType().GetTypeInfo().DeclaredProperties)
+                    {
+                        if (field.CanWrite == true)
+                        {
+                            Console.Write("Input new {0}: ", field.Name);
+                            string inputData = Console.ReadLine();
+
+                            if(inputData != "-")
+                            {
+                                while (validator.CheckInputE(inputData) == false)
+                                {
+                                    Console.WriteLine("Incorrect input data. Try again.");
+                                    inputData = Console.ReadLine();
+                                }
+                                field.SetValue(oldEntry, inputData);
+                            }
+                        }
+                    }
 
                     Console.WriteLine();
                     Console.WriteLine("Edited entry:");
-                    printer.PrintEntry(phoneBook.EntryBook[entryNumber]);
+                    printer.PrintEntry(phoneBook.EntryBook[entryNumberToEdit]);
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect entry number. Try Againg.");
+                    Console.WriteLine("Incorrect entry number. Try Again.");
                 }
-
             }
+
             public void PrintAll()
             {
-                printer.PrintPhoneBook(phoneBook.EntryBook);
+                Console.WriteLine();
+                if (phoneBook.EntryBook.Length != 0)
+                {
+                    printer.PrintPhoneBook(phoneBook.EntryBook);
+                }
+                else
+                {
+                    Console.Beep(450, 500);
+                    Console.WriteLine("Phonebook is empty.");
+                    Console.WriteLine();
+                }
             }
 
             public void DeleteEntry()
@@ -158,7 +272,7 @@ namespace StudyPhoneNotebook
                 bool checkNumber = int.TryParse(Console.ReadLine(), out int result);
                 Console.WriteLine();
 
-                if (checkNumber == true && result < phoneBook.EntryBook.Length)
+                if ((checkNumber == true) && (result < phoneBook.EntryBook.Length))
                 {
                     int entryNumber = result;
                     Console.WriteLine("You selected this entry to delete:");
@@ -166,7 +280,7 @@ namespace StudyPhoneNotebook
 
                     Console.WriteLine("To confirm deleting operation write Y");
                     string questionForClosing = Console.ReadLine();
-                    if (questionForClosing == "Y" || questionForClosing == "y")
+                    if ((questionForClosing == "Y") || (questionForClosing == "y"))
                         phoneBook.EntryBook = phoneBook.DeleteEntry(entryNumber, phoneBook.EntryBook);
                 }
                 else
@@ -174,8 +288,38 @@ namespace StudyPhoneNotebook
                     Console.WriteLine("Incorrect entry number. Try Again.");
                 }
             }
+
+            internal void DeleteAllEntries()
+            {
+                Console.WriteLine();
+                phoneBook.EntryBook = new Entry[0];
+                Console.Beep(450, 200);
+                Console.Beep(450, 200);
+                Console.Beep(450, 200);
+                Console.WriteLine("Now Phonebook is empty.");
+                Console.WriteLine();
+            }
         }
         
+        class Editor
+        {
+            public Entry EditCurrentEntry(Entry entry)
+            {
+                foreach (PropertyInfo field in entry.GetType().GetTypeInfo().DeclaredProperties)
+                {
+                    if (field.CanWrite == true)
+                    {
+                        Console.WriteLine("Input new {0}: ", field.Name);
+                        field.SetValue(entry, Console.ReadLine());
+                    }
+                }
+
+                Console.WriteLine();
+
+                return entry;
+            }
+        }
+
         class Printer
         {
             public void PrintPhoneBook(Entry[] entryBook)
@@ -194,10 +338,87 @@ namespace StudyPhoneNotebook
                     Console.WriteLine("Not found");
                 else
                 {
-                    Console.WriteLine("Id:\t" + entry.Id);
-                    Console.WriteLine("Name:\t" + entry.Name);
+                    //1st varian
+                    //Console.WriteLine("Id:\t" + entry.Id);
+                    //Console.WriteLine("Name:\t" + entry.Name);
+                    //Console.WriteLine();
+
+                    //2nd
+                    foreach (PropertyInfo field in entry.GetType().GetTypeInfo().DeclaredProperties)
+                    {
+                        Console.WriteLine("{0}: {1}" , field.Name, field.GetValue(entry));
+                    }
+
                     Console.WriteLine();
                 }
+            }
+        }
+
+        class Sorter
+        {
+            public string[] Sorting(Entry entry)
+            {
+                //1st working process of field's enumeration
+                //how is it working??
+                //IEnumerable<FieldInfo> fields = entry.GetType().GetTypeInfo().DeclaredFields;
+                //foreach (var field in fields.Where(x => !x.IsStatic))
+                //{
+                //    Console.WriteLine(field.GetValue(entry));
+                //}
+
+                //2.1
+                //PropertyInfo[] entryPropertyInfo;
+                //Type entryType = typeof(Entry);
+                //entryPropertyInfo = entryType.GetProperties();
+                //string[] propertyArray = new string[entryPropertyInfo.Length];
+
+                //2.2
+                int i = 0;
+                string[] propertyArray = new string[entry.GetType().GetTypeInfo().DeclaredProperties.ToArray().Length];
+
+                //2 way to get fields
+                foreach (PropertyInfo field in entry.GetType().GetTypeInfo().DeclaredProperties)
+                {
+                    for (; i < propertyArray.Length; )
+                    {
+                        propertyArray[i] = field.GetValue(entry).ToString();
+                        i++;
+                        break;
+                    }
+                }
+
+                return propertyArray;
+            }
+        }
+
+        class Сomparator
+        {
+            public bool ComparingOfRequestAndEntryProperties(string requestToFind, string property)
+            {
+                requestToFind = requestToFind.ToLower();
+                property = property.ToLower();
+                bool findingResult = false;
+
+                for (int i = 0; i < property.Length; i++)
+                {
+                    if ((property[i] == requestToFind[0]) && (requestToFind.Length <= property.Length - i))
+                    {
+                        for (int j = 0, charCounterOfRequestToFind = 0; j < requestToFind.Length; j++)
+                        {
+                            if (property[j + i] == requestToFind[j])
+                            {
+                                charCounterOfRequestToFind++;
+
+                                if (charCounterOfRequestToFind == requestToFind.Length)
+                                {
+                                    findingResult = true; 
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                return findingResult;
             }
         }
 
@@ -215,6 +436,8 @@ namespace StudyPhoneNotebook
                     "\nedit - to edit the entry" +
                     "\nprint - to print all entries" +
                     "\ndelete - to delete the entry" +
+                    "\ndelall - to delete all entries in the Phonebook" +
+                    "\nclear - to clear display" +
                     "\nclose - to close program" +
                     "\n");
 
@@ -234,6 +457,12 @@ namespace StudyPhoneNotebook
                         break;
                     case "delete":
                         entryProgram.DeleteEntry();
+                        break;
+                    case "delall":
+                        entryProgram.DeleteAllEntries();
+                        break;
+                    case "clear":
+                        Console.Clear();
                         break;
                     case "close":
                         close = false;

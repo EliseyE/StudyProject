@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyInterfacesDefault", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGenerics", "StudySctuctures\StudyGenerics.csproj", "{DD5BF96D-D154-4D37-8FB6-116AE40B0387}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyExcel", "StudyExcel\StudyExcel.csproj", "{A1DDC6B3-243E-4083-8CC0-1A331258F596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{DD5BF96D-D154-4D37-8FB6-116AE40B0387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD5BF96D-D154-4D37-8FB6-116AE40B0387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD5BF96D-D154-4D37-8FB6-116AE40B0387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1DDC6B3-243E-4083-8CC0-1A331258F596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DDC6B3-243E-4083-8CC0-1A331258F596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DDC6B3-243E-4083-8CC0-1A331258F596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DDC6B3-243E-4083-8CC0-1A331258F596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
