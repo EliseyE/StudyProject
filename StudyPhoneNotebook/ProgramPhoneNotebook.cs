@@ -294,11 +294,19 @@ namespace StudyPhoneNotebook
             internal void DeleteAllEntries()
             {
                 Console.WriteLine();
-                phoneBook.EntryBook = new Entry[0];
-                Console.Beep(450, 200);
-                Console.Beep(450, 200);
-                Console.Beep(450, 200);
-                Console.WriteLine("Now Phonebook is empty.");
+                Console.WriteLine("To confirm deleting operation write Y");
+                string questionForClosing = Console.ReadLine();
+                Console.WriteLine();
+
+                if ((questionForClosing == "Y") || (questionForClosing == "y"))
+                {
+                    phoneBook.EntryBook = new Entry[0];
+                    Console.Beep(450, 200);
+                    Console.Beep(450, 200);
+                    Console.Beep(450, 200);
+                    Console.WriteLine("Now the Phonebook is empty.");
+                }
+
                 Console.WriteLine();
             }
         }
@@ -470,6 +478,10 @@ namespace StudyPhoneNotebook
                         break;
                     case "close":
                         close = false;
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect command. Please try again.");
+                        Console.WriteLine();
                         break;
                 }
             }

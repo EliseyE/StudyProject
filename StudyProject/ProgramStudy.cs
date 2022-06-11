@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
@@ -66,11 +67,17 @@ namespace StudyProject
 
             //Lesson2FromEngineerSpock();
 
-            int[] a = { 5, 4, 6, 2 };
-            int[] b = a;
-            a[0] = 99;
-            
-            Console.WriteLine($"{a[0]} {b[0]}");
+            //Example of feature of copy Array process with collision 
+            //int[] a = { 5, 4, 6, 2 };
+            //int[] b = a;
+            //a[0] = 99;
+            //Console.WriteLine($"{a[0]} {b[0]}");
+
+            //Lesson4 by Collections from EngineerSpock
+            //Lesson4ArrayAndListFromEngineerSpock();
+            //Lesson4DictionaryFromEngineerSpock();
+            //Lesson4StackAndQueueFromEngineerSpock();
+            Lesson4OtherArrayFromEngineerSpock();
 
 
             Console.ReadKey();
@@ -1201,7 +1208,227 @@ namespace StudyProject
             Console.WriteLine(ts.Days);
         }
 
-        
+        static void Lesson4ArrayAndListFromEngineerSpock()
+        {
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int index = Array.BinarySearch(numbers, 4);
+            Console.WriteLine("BinarySearch index result: {0}", index);
+            Console.WriteLine();
+
+            int[] copy = new int[10];
+            Array.Copy(numbers, copy, numbers.Length);
+
+            int[] anotherCopy = new int[10];
+            copy.CopyTo(anotherCopy, 0);
+
+            Console.WriteLine("Array.Reverse:");
+            Array.Reverse(copy);
+            foreach (var c in copy)
+            {
+                Console.WriteLine(c);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Array.Sort:");
+            Array.Sort(copy);
+            foreach (var c in copy)
+            {
+                Console.WriteLine(c);
+            }
+
+            Array.Clear(copy, 0, copy.Length);
+
+
+            //Lists
+
+            Console.WriteLine();
+            Console.WriteLine("List:");
+
+            var intList = new List<int>() { 1, 4, 5, 6, 7, 14, 22, 17 };
+            intList.Add(11);
+
+            int[] intArray = { 1, 4, 56, 7 };
+            intList.AddRange(intArray);
+
+            // Remove deletes only first found element
+            if (intList.Remove(1))
+            {
+                //do
+            }
+
+            //Remove by index
+            intList.RemoveAt(0);
+
+            intList.Reverse();
+
+            bool contains = intList.Contains(3);
+
+            int min = intList.Min();
+            int max = intList.Max();
+
+            Console.WriteLine($"Min = {min}. Max = {max}");
+
+            int indexOf = intList.IndexOf(7);
+            int lastIndexOf = intList.LastIndexOf(7);
+
+            Console.WriteLine($"IndexOf 7 = {indexOf}. LastIndexOf 7 = {lastIndexOf}");
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                Console.Write($"{intList[i]} ");
+            }
+            Console.WriteLine();
+
+            foreach (var item in intList)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+        }
+
+        static void Lesson4DictionaryFromEngineerSpock()
+        {
+            //Dictionary
+            Console.WriteLine();
+            Console.WriteLine("Dictionary:");
+
+            //initialisation 1
+            var people = new Dictionary<int, string>();
+            people.Add(1, "John");
+            people.Add(2, "Anna");
+            people.Add(3, "Platon");
+
+            //initialisation 2
+            people = new Dictionary<int, string>()
+            {
+                {1, "John" },
+                {2, "Anna" },
+                {3, "Platon" },
+            };
+
+            string name = people[2];
+            Console.WriteLine(name);
+
+            Console.WriteLine();
+            Console.WriteLine("Iterating over keys:");
+            var keys = people.Keys;
+            //the same;
+            //Dictionary<int, string>.KeyCollection keys = people.Keys;
+            foreach (var item in keys)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Iterating over values:");
+            var values = people.Values;
+
+            foreach (var item in values)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Iterating over keys+values pairs:");
+
+            foreach (var pair in people)
+            //foreach (KeyValuePair<int, string> item in people)
+            {
+                Console.WriteLine($"Key: {pair.Key}. Value: {pair.Value}");
+            }
+
+            Console.WriteLine($"Count = {people.Count}");
+
+            bool containsKey = people.ContainsKey(2);
+            bool containsValue = people.ContainsValue("John");
+
+            Console.WriteLine($"Contains key: {containsKey}. Contains value: {containsValue}");
+
+            //Remove deletes value by key and returns bool true if it's done
+            people.Remove(1);
+
+            //why Tryadd doesn't work
+            //people.TryAdd
+
+            if (people.TryGetValue(2, out string value))
+            {
+                Console.WriteLine($"Key 2. Val = {value}");
+            }
+            else
+            {
+                Console.WriteLine("Failed to get");
+            }
+
+            people.Clear();
+        }
+
+
+        static void Lesson4StackAndQueueFromEngineerSpock()
+        {
+            //Stack in .NET
+            Console.WriteLine("Stack:");
+            var stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+
+            Console.WriteLine($"Should print out 4: {stack.Peek()}");
+
+            stack.Pop();
+
+            Console.WriteLine($"Should print out 3: {stack.Peek()}");
+
+            Console.WriteLine();
+            Console.WriteLine("Iterate over the stack.");
+            foreach (var cur in stack)
+            {
+                Console.WriteLine(cur);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Queue:");
+
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+
+            Console.WriteLine($"Should print out 1: {queue.Peek()}");
+
+            queue.Dequeue();
+
+            Console.WriteLine($"Should print out 2: {queue.Peek()}");
+
+            Console.WriteLine("Iterate over the queue.");
+            foreach (var cur in queue)
+            {
+                Console.WriteLine(cur);
+            }
+        }
+
+        static void Lesson4OtherArrayFromEngineerSpock()
+        {
+            //Array can start from variable index like there from 1. But don't do that! And it's slower than from 0: 
+            Array myArray = Array.CreateInstance(typeof(int), new[] { 4 }, new[] { 1 });
+            myArray.SetValue(2019, 1);
+            myArray.SetValue(2020, 2);
+            myArray.SetValue(2021, 3);
+            myArray.SetValue(2022, 4);
+            
+            Console.WriteLine($"Starting index: {myArray.GetLowerBound(0)}");
+            Console.WriteLine($"Ending index: {myArray.GetUpperBound(0)}");
+
+            Console.WriteLine();
+
+            for (int i = myArray.GetLowerBound(0); i <= myArray.GetUpperBound(0); i++)
+            {
+                Console.WriteLine($"{myArray.GetValue(i)} at index {i}");
+            }
+        }
+
+
 
 
     }
